@@ -36,9 +36,15 @@ class App extends Component {
   }
 }
 
-function productClicked(ID) {
+function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+async function productClicked(ID) {
   var elemName = "carditem" + ID;
   console.log(elemName);
+  document.getElementById(ID).className = "card-fadeout";
+  await new Promise(r => setTimeout(r, 300));
   document.getElementById(ID).remove();
 }
 
@@ -46,7 +52,7 @@ export default App;
 
 const ProductCard = ({ ID, Name, Categories, SKU, Weight, Tags, Images }) => (
 
-  <div id={ID} className="card" onClick={() => productClicked(ID)}>
+  <div id={ID} onClick={() => productClicked(ID)} className="card">
 
     <table className="table-product">
       <tbody>

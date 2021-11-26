@@ -63,5 +63,37 @@
   padding-right: 80px;
   margin-top: 20px;
   margin-bottom: 20px;
+  animation: fadein .3s linear forwards;
+}
 
+.card-fadeout{
+  border-radius: 100px !important;
+  max-width: 500px;
+  cursor: pointer;
+  padding-left: 80px;
+  padding-right: 80px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  -webkit-animation: fadeout .3s linear forwards;
+  animation: fadeout .3s linear forwards;
+}
+
+@-webkit-keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+  
+@keyframes fadein {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+  
+@-webkit-keyframes fadeout {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+  
+@keyframes fadeout {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
 }
